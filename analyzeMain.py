@@ -3,10 +3,7 @@ import glob
 
 # 分析算法发现的异常
 # 根据PR曲线，选取一个合理的threshold进行分析
-now_threshold = 0.00400733   # precision first
-# now_threshold = 0.000601345  # recall first
-# now_first = 'precision'  # for result file name
-# now_first = 'recall'
+now_threshold = 0.00400733 
 
 def dataloader():
     tcp = pd.DataFrame(index=[], columns=[])
@@ -17,14 +14,11 @@ def dataloader():
     tcp = tcp.iloc[:, [1, 2, 10, 9]]
     tcp.columns = ['date', 'time', 'type', 'anomaly']
     tcp = tcp[tcp.date != '07/32/1998']
-    # acquire datetime information
-    # tcp.insert(0, 'date_time', tcp['date'] + '/' + tcp['time'])
     tcp['date_time'] = tcp['date'] + '/' + tcp['time']
     tcp = tcp.drop('date', axis=1)
     tcp = tcp.drop('time', axis=1)
     tcp['date_time'] = pd.to_datetime(tcp['date_time'], format='%m/%d/%Y/%H:%M:%S')
 
-    # calculate how many hours passed since the initial time
     initial_time = tcp['date_time'].min()
 
     tcp['date_time'] = tcp['date_time'] - initial_time
@@ -84,11 +78,6 @@ if __name__ == '__main__':
                 find_small_count[small_type] += 1
             else:
                 find_small_count[small_type] = 1
-    # print('FIND:')
-    # print('big_type:')
-    # print(find_big_count)
-    # print('small_type:')
-    # print(find_small_count)
 
     not_find_big_count = {}
     not_find_small_count = {}
@@ -107,7 +96,6 @@ if __name__ == '__main__':
                 not_find_small_count[small_type] += 1
             else:
                 not_find_small_count[small_type] = 1
-    # file_name = "./Evaluate/analyze_" + now_first + "_first.txt"
     file_name = "./Evaluate/analyze_150.txt"
     f = open(file_name, "w")
     print('now threshold = ' + str(now_threshold), file=f)
@@ -131,12 +119,3 @@ if __name__ == '__main__':
         print(key + ' [find: ' + str(find_num) + ' , not_find: ' + str(not_find_num) + ' ]', file=f)
     f.close()
 
-    # print("FIND: " + str(len(find)))
-    # f = open("./Result/find.txt", "w")
-    # print(find, file=f)
-    # f.close()
-    #
-    # print("NOT_FIND: " + str(len(not_find)))
-    # f = open("./Result/not_find.txt", "w")
-    # print(not_find, file=f)
-    # f.close()

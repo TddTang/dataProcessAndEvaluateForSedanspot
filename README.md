@@ -15,6 +15,6 @@ not_find: 实际为异常，算法未发现为异常
 # dataProcessMain.py
 对于数据处理，输出input.csv
 # evaluateMain.py
-对于output.csv分析输出PR_result.txt
+对于output.csv分析，输出PR_result.txt
 # analyzeMain.py
 根据PR图选择一个合适的threshold进行分析，输出analyze.txt

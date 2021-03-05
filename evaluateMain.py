@@ -20,7 +20,6 @@ def dataloader():
     tcp = tcp.drop('time', axis=1)
     tcp['date_time'] = pd.to_datetime(tcp['date_time'], format='%m/%d/%Y/%H:%M:%S')
 
-    # calculate how many hours passed since the initial time
     initial_time = tcp['date_time'].min()
 
     tcp['date_time'] = tcp['date_time'] - initial_time
@@ -43,9 +42,6 @@ if __name__ == '__main__':
             print('truth: ' + str(num))
         if row['source'] != '-' and row['destination'] != '-':
             truth.append(int(row['anomaly']))
-    #
-    # df = pd.read_csv('./Result/output100.csv', delim_whitespace=True, header=None)
-    # df.columns = ['score']
     num = 0
     for i, row in df.iterrows():
         num += 1
@@ -55,9 +51,7 @@ if __name__ == '__main__':
 
     precision, recall, thresholds = precision_recall_curve(truth, detected)
 
-    # print(len(precision))
-    # print(len(recall))
-    # print(len(thresholds))
+
     f = open("./Evaluate/PR_result_150.txt", "w")  # 结果存储的地方
     print('precision' + '            recall              ' + 'thresholds', file=f)
     for i in range(len(thresholds)):

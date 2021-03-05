@@ -12,20 +12,17 @@ if __name__ == '__main__':
     tcp = tcp.iloc[:, [1, 2, 7, 8]]
     tcp.columns = ['date', 'time', 'source', 'destination']
     tcp = tcp[tcp.date != '07/32/1998']
-    # acquire datetime information
-    # tcp.insert(0, 'date_time', tcp['date'] + '/' + tcp['time'])
     tcp['date_time'] = tcp['date'] + '/' + tcp['time']
     tcp = tcp.drop('date', axis=1)
     tcp = tcp.drop('time', axis=1)
     tcp['date_time'] = pd.to_datetime(tcp['date_time'], format='%m/%d/%Y/%H:%M:%S')
 
-    # calculate how many hours passed since the initial time
     initial_time = tcp['date_time'].min()
 
     tcp['date_time'] = tcp['date_time'] - initial_time
     tcp['hours_past'] = tcp['date_time'].dt.days * 86400 + tcp['date_time'].dt.seconds  # 换成秒
     tcp = tcp.sort_values('hours_past')
-    # graphs = tcp.loc[:, ['source', 'destination', 'hours_past']]
+
     graphs = tcp.loc[:, ['hours_past', 'source', 'destination']]
     graphs['weight'] = 1
     graphs['label'] = '-'

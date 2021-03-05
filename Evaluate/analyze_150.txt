@@ -1,0 +1,75 @@
+now threshold = 0.00400733
+BIG and SMALL TYPE:
+probe
+{'saint', 'nmap', 'portsweep', 'satan', 'mscan', 'ipsweep'}
+dos
+{'smurf', 'neptunettl', 'smurfttl', 'teardrop', 'back', 'processtable', 'apache2', 'land', 'mailbomb', 'warez', 'pod', 'syslog', 'neptune', 'udpstorm'}
+u2r
+{'sqlattack', 'multihop-a', 'rootkit-b', 'ps-e', 'ps-s', 'format-s', 'ps-b', 'u2r3', 'u2r2', 'eject', 'xterm-s', 'rootkit-s', 'format-b', 'format', 'httptunnel-s', 'multihop-b', 'loadmodule', 'multihop-s', 'rootkit-a', 'multihop-e', 'xterm'}
+r2l
+{'snmpgetattack', 'xlock-a', 'httptunnel-a', 'snmpguess', 'named-e', 'dict', 'guest', 'xlock', 'xlock-b', 'phf', 'sendmail-e', 'named-a', 'httptunnel-e', 'sendmail-a', 'named-b', 'sendmail-b'}
+---------------------------------------------
+BIG TYPE:
+FIND:
+{'probe': 27760, 'dos': 255681, 'u2r': 92, 'r2l': 67913}
+NOT FIND:
+{'r2l': 113338, 'probe': 29008, 'dos': 385962, 'u2r': 40}
+---------------------------------------------
+SMALL TYPE:
+portsweep [find: 1513 , not_find: 2065 ]
+pod [find: 1717 , not_find: 221 ]
+teardrop [find: 458 , not_find: 342 ]
+syslog [find: 2 , not_find: 0 ]
+ps-s [find: 6 , not_find: 4 ]
+satan [find: 15649 , not_find: 2781 ]
+format [find: 4 , not_find: 2 ]
+apache2 [find: 1307 , not_find: 1245 ]
+neptune [find: 236466 , not_find: 379424 ]
+smurf [find: 10159 , not_find: 6 ]
+multihop-s [find: 5 , not_find: 2 ]
+httptunnel-s [find: 2 , not_find: 1 ]
+nmap [find: 874 , not_find: 1507 ]
+sendmail-e [find: 7 , not_find: 1 ]
+eject [find: 2 , not_find: 4 ]
+snmpguess [find: 9194 , not_find: 14791 ]
+named-e [find: 2 , not_find: 1 ]
+named-a [find: 9 , not_find: 2 ]
+land [find: 6 , not_find: 3 ]
+snmpgetattack [find: 57073 , not_find: 95608 ]
+back [find: 685 , not_find: 452 ]
+processtable [find: 317 , not_find: 447 ]
+xlock-b [find: 2 , not_find: 2 ]
+xlock-a [find: 1 , not_find: 3 ]
+ipsweep [find: 730 , not_find: 2371 ]
+multihop-e [find: 1 , not_find: 0 ]
+multihop-b [find: 2 , not_find: 0 ]
+named-b [find: 1 , not_find: 2 ]
+dict [find: 1504 , not_find: 2774 ]
+saint [find: 2781 , not_find: 5053 ]
+sendmail-b [find: 1 , not_find: 5 ]
+sendmail-a [find: 1 , not_find: 4 ]
+phf [find: 1 , not_find: 1 ]
+udpstorm [find: 2 , not_find: 0 ]
+smurfttl [find: 670 , not_find: 0 ]
+warez [find: 872 , not_find: 737 ]
+multihop-a [find: 43 , not_find: 0 ]
+guest [find: 45 , not_find: 56 ]
+format-s [find: 4 , not_find: 3 ]
+u2r2 [find: 1 , not_find: 0 ]
+mscan [find: 6213 , not_find: 15231 ]
+format-b [find: 1 , not_find: 0 ]
+xterm [find: 3 , not_find: 5 ]
+u2r3 [find: 1 , not_find: 0 ]
+ps-e [find: 2 , not_find: 0 ]
+ps-b [find: 2 , not_find: 3 ]
+xterm-s [find: 4 , not_find: 1 ]
+rootkit-b [find: 1 , not_find: 1 ]
+rootkit-a [find: 5 , not_find: 4 ]
+neptunettl [find: 1045 , not_find: 55 ]
+loadmodule [find: 1 , not_find: 1 ]
+xlock [find: 1 , not_find: 0 ]
+httptunnel-e [find: 65 , not_find: 71 ]
+httptunnel-a [find: 6 , not_find: 3 ]
+mailbomb [find: 1975 , not_find: 3030 ]
+rootkit-s [find: 1 , not_find: 1 ]
+sqlattack [find: 1 , not_find: 1 ]
